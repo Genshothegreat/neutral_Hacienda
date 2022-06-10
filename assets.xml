@@ -127,6 +127,10 @@
           <IconFilename>data/modgraphics/icons/icon_hacienda.png</IconFilename>
   </ModOp>
 
+  <ModOp Type="replace" GUID="25546" Path="/Values/Standard/IconFilename/">
+    <IconFilename>data/modgraphics/icons/icon_hacienda.png</IconFilename>
+  </ModOp>
+
   <ModOp Type="replace" GUID="24768" Path="/Values/Standard/IconFilename/">
       <IconFilename>data/modgraphics/icons/icon_modules.png</IconFilename>
   </ModOp>
