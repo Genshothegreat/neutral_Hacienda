@@ -1,258 +1,264 @@
 <?xml version="1.0"?>
 <ModOps>
-  <!--Make the Hacienda a neutral preset -->
-  <!--Make the Hacienda a neutral preset -->
-  <!--Make the Hacienda a neutral preset -->
-
-    <!--Trigger for HaciendaClone-->
-  <ModOp Type="addNextSibling" GUID="25059">
-    <Asset>    
-      <Template>Trigger</Template>      
-              <Values>
-                <Standard>
-                  <GUID>1500200646</GUID>
-                  <Name>Unlock HaciendaClone</Name>
-                </Standard>
-                <Trigger>
-                  <TriggerCondition>
-                    <Template>ConditionPlayerCounter</Template>
-                    <Values>
-                      <Condition/>
-                      <ConditionPlayerCounter>
-                        <PlayerCounter>PopulationByLevel</PlayerCounter>
-                        <Context>15000006</Context>
-                        <CounterAmount>1</CounterAmount>
-                      </ConditionPlayerCounter>
-                    </Values>
-                  </TriggerCondition>
-                  <TriggerActions>
-                    <Item>
-                        <TriggerAction>
-                            <Template>ActionResetTrigger</Template>
-                            <Values>
-                                <Action />
-                                <ActionResetTrigger />
-                            </Values>
-                        </TriggerAction>
-                    </Item>
-                    <Item>
-                        <TriggerAction>
-                            <Template>ActionUnlockAsset</Template>
-                            <Values>
-                                <Action />
-                                <ActionUnlockAsset>
-                                    <UnhideAssets>
-                                        <Item>
-                                            <Asset>1500200645</Asset>
-                                            <!-- Hacienda Clone -->
-                                        </Item>
-                                    </UnhideAssets>
-                                </ActionUnlockAsset>
-                            </Values>
-                        </TriggerAction>
-                    </Item>
-                    <Item>
-                        <TriggerAction>
-                            <Template>ActionUnlockAsset</Template>
-                            <Values>
-                                <Action />
-                                <ActionUnlockAsset>
-                                    <UnlockAssets>
-                                        <Item>
-                                            <Asset>1500200645</Asset>
-                                            <!-- Hacienda Clone -->
-                                        </Item>
-                                    </UnlockAssets>
-                                </ActionUnlockAsset>
-                            </Values>
-                        </TriggerAction>
-                    </Item>
-                  </TriggerActions>
-                </Trigger>
-                <TriggerSetup />
-              </Values>
-        </Asset>
-    </ModOp>
-
-  <!--Hacienda Clone-->
-  <ModOp Type="addnextSibling" GUID="24768">
-      <Asset>
-          <BaseAssetGUID>24768</BaseAssetGUID>
-            <Values>
-              <Standard>
-                  <GUID>1500200645</GUID>
-                  <Name>Hacienda2</Name>
-                  <IconFilename>data/modgraphics/icons/icon_hacienda.png</IconFilename>
-                  <InfoDescription/>
-              </Standard>
-              <Blocking/>
-              <Building/>
-              <Cost/>
-              <Selection/>
-              <Object/>
-              <Constructable/>
-              <Mesh/>
-              <SoundEmitter/>
-              <Locked/>
-              <Infolayer/>
-              <FeedbackController/>
-              <Warehouse/>
-              <LogisticNode/>
-              <UpgradeList/>
-              <AmbientMoodProvider/>
-              <Maintenance/>
-              <StorageBase/>
-              <Attackable/>
-              <Pausable/>
-              <BuildingUnique/>
-              <ModuleOwner/>
-              <Hacienda/>
-              <IncidentInfectable/>
-              <PublicService/>
-              <Culture/>
-          </Values>
-      </Asset>
-  </ModOp>
-
-<!--Replace Hacienda with Clone-->
-    <ModOp Type="remove" GUID="25178" Path="/Values/ConstructionCategory/BuildingList/Item[Building='24768']"></ModOp>
-    <ModOp Type="addPrevSibling" GUID="25178" Path="/Values/ConstructionCategory/BuildingList/Item[Building='25194']">
-      <Item>
-        <Building>1500200645</Building>
-      </Item>
-    </ModOp>
-
-    <!--Replace Icons-->
-  <ModOp Type="replace" GUID="25178" Path="/Values/Standard/IconFilename/">
-          <IconFilename>data/modgraphics/icons/icon_hacienda.png</IconFilename>
-  </ModOp>
-
-  <ModOp Type="replace" GUID="25546" Path="/Values/Standard/IconFilename/">
-    <IconFilename>data/modgraphics/icons/icon_hacienda.png</IconFilename>
-  </ModOp>
-
-  <ModOp Type="replace" GUID="24768" Path="/Values/Standard/IconFilename/">
-      <IconFilename>data/modgraphics/icons/icon_modules.png</IconFilename>
-  </ModOp>
-
-    <!--Trigger for Newspaper-->
-  <ModOp Type="addNextSibling" GUID="25059">
-    <Asset>
-    <Template>Trigger</Template>
-        <Values>
-          <Standard>
-            <GUID>1500200647</GUID>
-            <Name>DLC10 Hacienda Trigger Newspaper</Name>
-          </Standard>
-          <Trigger>
-            <TriggerCondition>
-              <Template>ConditionPlayerCounter</Template>
-              <Values>
-                <Condition/>
-                <ConditionPlayerCounter>
-                  <Context>1500200645</Context>
-                  <CounterAmount>1</CounterAmount>
-                </ConditionPlayerCounter>
-              </Values>
-            </TriggerCondition>
-            <TriggerActions>
-              <Item>
-                <TriggerAction>
-                  <Template>ActionForceNewspaper</Template>
-                  <Values>
-                    <Action/>
-                    <ActionForceNewspaper>
-                      <Articles>
-                        <Item>
-                          <Article>143924</Article>
-                        </Item>
-                      </Articles>
-                      <OpenNewspaperUI>1</OpenNewspaperUI>
-                      <OpenNewspaperType>SpecialEdition</OpenNewspaperType>
-                      <PamsyWelcomeRequiredAsset>143926</PamsyWelcomeRequiredAsset>
-                    </ActionForceNewspaper>
-                  </Values>
-                </TriggerAction>
-              </Item>
-            </TriggerActions>
-            <SubTriggers>
-              <Item>
-                <SubTrigger>
-                  <Template>AutoCreateTrigger</Template>
-                  <Values>
-                    <Trigger>
-                      <TriggerCondition>
-                        <Template>ConditionTimer</Template>
-                        <Values>
-                          <Condition/>
-                          <ConditionTimer>
-                            <TimeLimit>4000</TimeLimit>
-                          </ConditionTimer>
-                        </Values>
-                      </TriggerCondition>
-                    </Trigger>
-                  </Values>
-                </SubTrigger>
-              </Item>
-              <Item>
-                <SubTrigger>
-                  <Template>AutoCreateTrigger</Template>
-                  <Values>
-                    <Trigger>
-                      <TriggerCondition>
-                        <Template>ConditionActiveSession</Template>
-                        <Values>
-                          <Condition/>
-                          <ConditionActiveSession>
-                            <ActiveSession>180025</ActiveSession>
-                          </ConditionActiveSession>
-                        </Values>
-                      </TriggerCondition>
-                    </Trigger>
-                  </Values>
-                </SubTrigger>
-              </Item>
-            </SubTriggers>
-            <ResetTrigger>
-              <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
-              <Values>
-                <EmptyAutoCreateValue/>
-              </Values>
-            </ResetTrigger>
-          </Trigger>
-          <TriggerSetup>
-            <UsedBySecondParties>0</UsedBySecondParties>
-          </TriggerSetup>
-        </Values>
-      </Asset>
-    </ModOp>
-
-      <!-- Add to all Pools -->
-      <ModOp Type="add" GUID="2001013" Path="/Values/FeedbackBuildingGroup/Buildings/">
-        <Item>
-          <Building>1500200645</Building>
-        </Item>
-      </ModOp>
-      <ModOp Type="add" GUID="25055" Path="/Values/AssetPool/AssetList/">
-        <Item>
-          <Building>1500200645</Building>
-        </Item>
-      </ModOp>
-      <ModOp Type="add" GUID="25672" Path="/Values/AssetPool/AssetList/">
-        <Item>
-          <Building>1500200645</Building>
-        </Item>
-      </ModOp>
-      <ModOp Type="add" GUID="25674" Path="/Values/ItemEffectTargetPool/EffectTargetGUIDs/">
-        <Item>
-          <GUID>1500200645</GUID>
-        </Item>
-      </ModOp>
-      <!-- Replace original Hacienda for Achievements --> 
-      <ModOp Type="replace" GUID="25839" Path="/Values/Trigger/Subtrigger/Values/Trigger/TriggerCondition/Values/ConditionPlayerCounter[Context='24768']">
-        <Context>1500200645</Context>
-      </ModOp>
-      <ModOp Type="replace" GUID="26028" Path="/Values/Trigger/Triggercondition/Values/Objectfilter[ObjectGUID='24768']">
-        <ObjectGUID>1500200645</ObjectGUID>
-      </ModOp>
+	<!--Make the Hacienda a neutral preset -->
+	<!--Make the Hacienda a neutral preset -->
+	<!--Make the Hacienda a neutral preset -->
+	<!--Trigger for HaciendaClone-->
+	<ModOp Type="addNextSibling" GUID="25059">
+		<Asset>
+			<Template>Trigger</Template>
+			<Values>
+				<Standard>
+					<GUID>1500200646</GUID>
+					<Name>Unlock HaciendaClone</Name>
+				</Standard>
+				<Trigger>
+					<TriggerCondition>
+						<Template>ConditionPlayerCounter</Template>
+						<Values>
+							<Condition/>
+							<ConditionPlayerCounter>
+								<PlayerCounter>PopulationByLevel</PlayerCounter>
+								<Context>15000006</Context>
+								<CounterAmount>1</CounterAmount>
+							</ConditionPlayerCounter>
+						</Values>
+					</TriggerCondition>
+					<TriggerActions>
+						<Item>
+							<TriggerAction>
+								<Template>ActionResetTrigger</Template>
+								<Values>
+									<Action />
+									<ActionResetTrigger />
+								</Values>
+							</TriggerAction>
+						</Item>
+						<Item>
+							<TriggerAction>
+								<Template>ActionUnlockAsset</Template>
+								<Values>
+									<Action />
+									<ActionUnlockAsset>
+										<UnhideAssets>
+											<Item>
+												<Asset>1500200645</Asset>
+												<!-- Hacienda Clone -->
+											</Item>
+										</UnhideAssets>
+									</ActionUnlockAsset>
+								</Values>
+							</TriggerAction>
+						</Item>
+						<Item>
+							<TriggerAction>
+								<Template>ActionUnlockAsset</Template>
+								<Values>
+									<Action />
+									<ActionUnlockAsset>
+										<UnlockAssets>
+											<Item>
+												<Asset>1500200645</Asset>
+												<!-- Hacienda Clone -->
+											</Item>
+										</UnlockAssets>
+									</ActionUnlockAsset>
+								</Values>
+							</TriggerAction>
+						</Item>
+					</TriggerActions>
+				</Trigger>
+				<TriggerSetup />
+			</Values>
+		</Asset>
+	</ModOp>
+	<!--Hacienda Clone-->
+	<ModOp Type="addnextSibling" GUID="24768">
+		<Asset>
+			<BaseAssetGUID>24768</BaseAssetGUID>
+			<Values>
+				<Standard>
+					<GUID>1500200645</GUID>
+					<Name>Hacienda2</Name>
+					<IconFilename>data/ui/2kimages/main/3dicons/icon_hacienda_main.png</IconFilename>
+					<InfoDescription/>
+				</Standard>
+				<Blocking/>
+				<Building/>
+				<Cost/>
+				<Selection/>
+				<Object/>
+				<Constructable/>
+				<Mesh/>
+				<SoundEmitter/>
+				<Locked/>
+				<Infolayer/>
+				<FeedbackController/>
+				<Warehouse/>
+				<LogisticNode/>
+				<UpgradeList/>
+				<AmbientMoodProvider/>
+				<Maintenance/>
+				<StorageBase/>
+				<Attackable/>
+				<Pausable/>
+				<BuildingUnique/>
+				<ModuleOwner/>
+				<Hacienda/>
+				<IncidentInfectable/>
+				<PublicService/>
+				<Culture/>
+			</Values>
+		</Asset>
+	</ModOp>
+	<!--Replace Hacienda with Clone-->
+	<ModOp Type="remove" GUID="25178" Path="/Values/ConstructionCategory/BuildingList/Item[Building='24768']"></ModOp>
+	<ModOp Type="addPrevSibling" GUID="25178" Path="/Values/ConstructionCategory/BuildingList/Item[Building='25194']">
+		<Item>
+			<Building>1500200645</Building>
+		</Item>
+	</ModOp>
+	<!--Hacienda abstract good Clone to replace Radius Icon-->
+	<ModOp Type="addNextSibling" GUID="25546">
+		<Asset>
+			<BaseAssetGUID>25546</BaseAssetGUID>
+			<Values>
+				<Standard>
+					<GUID>1500200651</GUID>
+					<Name>Hacienda</Name>
+					<IconFilename>data/modgraphics//icons/icon_radius.png</IconFilename>
+				</Standard>
+				<Text/>
+				<Locked/>
+				<Product/>
+				<ExpeditionAttribute/>
+			</Values>
+		</Asset>
+	</ModOp>
+	<ModOp Type="replace" GUID="502258" Path="/Values/MaintenanceBarConfig/HaciendaRadiusIcon/">
+		<HaciendaRadiusIcon>1500200651</HaciendaRadiusIcon>
+	</ModOp>
+	<!--Replace Module Icon-->
+	<ModOp Type="replace" GUID="24768" Path="/Values/Standard/IconFilename/">
+		<IconFilename>data/modgraphics/icons/icon_modules.png</IconFilename>
+	</ModOp>
+	<!--Trigger for Newspaper-->
+	<ModOp Type="addNextSibling" GUID="25059">
+		<Asset>
+			<Template>Trigger</Template>
+			<Values>
+				<Standard>
+					<GUID>1500200647</GUID>
+					<Name>DLC10 Hacienda Trigger Newspaper</Name>
+				</Standard>
+				<Trigger>
+					<TriggerCondition>
+						<Template>ConditionPlayerCounter</Template>
+						<Values>
+							<Condition/>
+							<ConditionPlayerCounter>
+								<Context>1500200645</Context>
+								<CounterAmount>1</CounterAmount>
+							</ConditionPlayerCounter>
+						</Values>
+					</TriggerCondition>
+					<TriggerActions>
+						<Item>
+							<TriggerAction>
+								<Template>ActionForceNewspaper</Template>
+								<Values>
+									<Action/>
+									<ActionForceNewspaper>
+										<Articles>
+											<Item>
+												<Article>143924</Article>
+											</Item>
+										</Articles>
+										<OpenNewspaperUI>1</OpenNewspaperUI>
+										<OpenNewspaperType>SpecialEdition</OpenNewspaperType>
+										<PamsyWelcomeRequiredAsset>143926</PamsyWelcomeRequiredAsset>
+									</ActionForceNewspaper>
+								</Values>
+							</TriggerAction>
+						</Item>
+					</TriggerActions>
+					<SubTriggers>
+						<Item>
+							<SubTrigger>
+								<Template>AutoCreateTrigger</Template>
+								<Values>
+									<Trigger>
+										<TriggerCondition>
+											<Template>ConditionTimer</Template>
+											<Values>
+												<Condition/>
+												<ConditionTimer>
+													<TimeLimit>4000</TimeLimit>
+												</ConditionTimer>
+											</Values>
+										</TriggerCondition>
+									</Trigger>
+								</Values>
+							</SubTrigger>
+						</Item>
+						<Item>
+							<SubTrigger>
+								<Template>AutoCreateTrigger</Template>
+								<Values>
+									<Trigger>
+										<TriggerCondition>
+											<Template>ConditionActiveSession</Template>
+											<Values>
+												<Condition/>
+												<ConditionActiveSession>
+													<ActiveSession>180025</ActiveSession>
+												</ConditionActiveSession>
+											</Values>
+										</TriggerCondition>
+									</Trigger>
+								</Values>
+							</SubTrigger>
+						</Item>
+					</SubTriggers>
+					<ResetTrigger>
+						<IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+						<Values>
+							<EmptyAutoCreateValue/>
+						</Values>
+					</ResetTrigger>
+				</Trigger>
+				<TriggerSetup>
+					<UsedBySecondParties>0</UsedBySecondParties>
+				</TriggerSetup>
+			</Values>
+		</Asset>
+	</ModOp>
+	<!-- Add to all Pools -->
+	<ModOp Type="add" GUID="2001013" Path="/Values/FeedbackBuildingGroup/Buildings/">
+		<Item>
+			<Building>1500200645</Building>
+		</Item>
+	</ModOp>
+	<ModOp Type="add" GUID="25055" Path="/Values/AssetPool/AssetList/">
+		<Item>
+			<Building>1500200645</Building>
+		</Item>
+	</ModOp>
+	<ModOp Type="add" GUID="25672" Path="/Values/AssetPool/AssetList/">
+		<Item>
+			<Building>1500200645</Building>
+		</Item>
+	</ModOp>
+	<ModOp Type="add" GUID="25674" Path="/Values/ItemEffectTargetPool/EffectTargetGUIDs/">
+		<Item>
+			<GUID>1500200645</GUID>
+		</Item>
+	</ModOp>
+	<!-- Replace original Hacienda for Achievements -->
+	<ModOp Type="replace" GUID="25839" Path="/Values/Trigger/Subtrigger/Values/Trigger/TriggerCondition/Values/ConditionPlayerCounter[Context='24768']">
+		<Context>1500200645</Context>
+	</ModOp>
+	<ModOp Type="replace" GUID="26028" Path="/Values/Trigger/Triggercondition/Values/Objectfilter[ObjectGUID='24768']">
+		<ObjectGUID>1500200645</ObjectGUID>
+	</ModOp>
 </ModOps>
