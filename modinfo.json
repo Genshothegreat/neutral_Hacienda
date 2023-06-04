@@ -1,5 +1,5 @@
 {
-  "Version": "1.0",
+  "Version": "2.0",
   "ModID": "neutral_hacienda_genshi",
   "IncompatibleIds": [],
   "ModDependencies": [],
@@ -31,19 +31,24 @@
   },
   "Description": {
     "English": "Provides a neutral hacienda UI",
-    "Chinese": null,
-    "French": null,
-    "German": null,
-    "Italian": null,
-    "Japanese": null,
-    "Korean": null,
-    "Polish": null,
-    "Russian": null,
-    "Spanish": null,
-    "Taiwanese": null
+    "Chinese": "提供中性的庄园 UI",
+    "French": "Fournit une interface utilisateur hacienda neutre",
+    "German": "Bietet eine neutrale Hacienda-Benutzeroberfläche",
+    "Italian": "Fornisce un'interfaccia utente hacienda neutrale",
+    "Japanese": "中立的なハシエンダ UI を提供します",
+    "Korean": "중립적인 목장 UI 제공",
+    "Polish": "Zapewnia neutralny interfejs hacjendy",
+    "Russian": "Обеспечивает нейтральный пользовательский интерфейс гасиенды",
+    "Spanish": "Proporciona una interfaz de usuario de hacienda neutral",
+    "Taiwanese": "提供一个中性的庄园用户界面"
   },
   "KnownIssues": null,
-  "DLCDependencies": [],
+  "DLCDependencies": [
+    {
+      "DLC":"SeedsOfChange",
+      "Dependant": "required"
+    }
+  ],
   "CreatorName": "Genshi",
   "CreatorContact": null,
   "Image": null
