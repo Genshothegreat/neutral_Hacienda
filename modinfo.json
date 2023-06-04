@@ -1,0 +1,50 @@
+{
+  "Version": "1.0",
+  "ModID": "neutral_hacienda_genshi",
+  "IncompatibleIds": [],
+  "ModDependencies": [],
+  "Category": {
+    "English": "Shared",
+    "Chinese": "Shared",
+    "French": "Shared",
+    "German": "Shared",
+    "Italian": "Shared",
+    "Japanese": "Shared",
+    "Korean": "Shared",
+    "Polish": "Shared",
+    "Russian": "Shared",
+    "Spanish": "Shared",
+    "Taiwanese": "Shared"
+  },
+  "ModName": {
+    "English": "Neutral Hacienda Base (Genshi)",
+    "Chinese": "Neutral Hacienda Base (Genshi)",
+    "French": "Neutral Hacienda Base (Genshi)",
+    "German": "Neutral Hacienda Base (Genshi)",
+    "Italian": "Neutral Hacienda Base (Genshi)",
+    "Japanese": "Neutral Hacienda Base (Genshi)",
+    "Korean": "Neutral Hacienda Base (Genshi)",
+    "Polish": "Neutral Hacienda Base (Genshi)",
+    "Russian": "Neutral Hacienda Base (Genshi)",
+    "Spanish": "Neutral Hacienda Base (Genshi)",
+    "Taiwanese": "Neutral Hacienda Base (Genshi)"
+  },
+  "Description": {
+    "English": "Provides a neutral hacienda UI",
+    "Chinese": null,
+    "French": null,
+    "German": null,
+    "Italian": null,
+    "Japanese": null,
+    "Korean": null,
+    "Polish": null,
+    "Russian": null,
+    "Spanish": null,
+    "Taiwanese": null
+  },
+  "KnownIssues": null,
+  "DLCDependencies": [],
+  "CreatorName": "Genshi",
+  "CreatorContact": null,
+  "Image": null
+}
