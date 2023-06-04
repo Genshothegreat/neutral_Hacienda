@@ -1,0 +1,32 @@
+<ModOps>
+	<ModOp Type="add" Path="/TextExport/Texts">
+		<Text>
+			<GUID>25238</GUID>
+			<Text>Clicca per accedere al menu Costruzione dei moduli e dei sentieri.</Text>
+		</Text>
+		<Text>
+			<GUID>25235</GUID>
+			<Text>Moduli</Text>
+		</Text>
+		<Text>
+			<GUID>25237</GUID>
+			<Text>Moduli</Text>
+		</Text>
+		<Text>
+			<GUID>25750</GUID>
+			<Text>Moduli</Text>
+		</Text>
+		<Text>
+			<GUID>25819</GUID>
+			<Text>Raggio</Text>
+		</Text>
+		<Text>
+			<GUID>25866</GUID>
+			<Text>Stabilisci un editto. Ci può essere un solo editto attivo per isola.</Text>
+		</Text>
+		<Text>
+			<GUID>24783</GUID>
+			<Text>Portata esterna dell'edificio</Text>
+		</Text>
+	</ModOp>
+</ModOps>
